@@ -1,0 +1,28 @@
+body{
+  background-color: lightgray;
+  font-family: Arial, sans-serif;
+}
+
+h1{
+  color:rgb(80, 0, 0);
+}
+
+.post{
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.user{
+  color:rgb(0, 0, 0);
+  font-style: italic;
+  font-size: 25px;
+}
+
+.content{
+  color:rgb(255, 0, 60);
+  font-style: oblique;
+  font-size: 20px;
+}
