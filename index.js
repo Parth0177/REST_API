@@ -4,7 +4,7 @@ const app= express();
 const PORT= 3002;
 const path = require('path');
 const {v4: uuidv4}= require('uuid');
-uuidv4();
+
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
@@ -84,9 +84,10 @@ app.patch('/posts/:id', (req,res)=>{
 
 app.get('/posts/:id/edit',(req,res)=>{
   let {id} = req.params;
-  let post = posts.find((p)=> id===p.id);
-  res.render('edit.ejs')
+  let post= posts.find((p)=> id===p.id);
+  res.render('edit.ejs',{post})
 })
+
 
 
 
