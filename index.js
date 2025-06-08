@@ -1,3 +1,4 @@
+const { log } = require('console');
 const express = require('express');
 const app= express();
 const PORT= 3002;
@@ -65,11 +66,27 @@ app.post('/posts',(req,res)=>{
 app.get('/posts/:id',(req,res)=>{
   let {id} = req.params;
   let post= posts.find((p)=> id===p.id);
-  console.log(post);
   res.render('full.ejs',{post})
 })
 
+app.patch('/posts/:id', (req,res)=>{
+  let {id} = req.params;
+  let newcontent = req.body.content;
+  console.log(newcontent);
+  let post = posts.find((p)=> id===p.id);
+  post.content= newcontent;
+  console.log(id);
+  res.send('patch requst working ')
+  console.log(post);
+  
+})
 
+
+app.get('/posts/:id/edit',(req,res)=>{
+  let {id} = req.params;
+  let post = posts.find((p)=> id===p.id);
+  res.render('edit.ejs')
+})
 
 
 
