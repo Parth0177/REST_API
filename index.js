@@ -16,27 +16,27 @@ app.use(express.static(path.join(__dirname,'public')));
 
 let posts=[
   {
-    id:"1a",
+    id:uuidv4(),
     username:'Parth Tiwari',
     content:'This is my first post.',
   },
   {
-    id:'2b',
+    id:uuidv4(),
     username:'Aryan Saxena',
     content:'This is my first post. Parth is my Father.',
   },
   {
-    id:'3c',
+    id:uuidv4(),
     username:'Shivansh Bajpai',
     content:'This is my first post. Aryan is my adopted son.',
   },
   {
-    id:'4c',
+    id:uuidv4(),
     username:'Tinku Mishra',
     content:'This is my first post. Parth is my original Father.',
   },
   {
-    id:'5d',
+    id:uuidv4(),
     username:'Manas Srivastava',
     content:'This is my first post. I am a very chaotic person.',
   },
@@ -56,7 +56,8 @@ app.get('/posts/new',(req,res)=>{
 
 app.post('/posts',(req,res)=>{
   let {username,content}= req.body;
-  posts.push({username,content});
+  let id= uuidv4();
+  posts.push({id,username,content});
   console.log(req.body);
   res.redirect('/posts');
 })
