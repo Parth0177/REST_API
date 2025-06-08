@@ -14,22 +14,27 @@ app.use(express.static(path.join(__dirname,'public')));
 
 let posts=[
   {
+    id:"1a",
     username:'Parth Tiwari',
     content:'This is my first post.',
   },
   {
+    id:'2b',
     username:'Aryan Saxena',
     content:'This is my first post. Parth is my Father.',
   },
   {
+    id:'3c',
     username:'Shivansh Bajpai',
     content:'This is my first post. Aryan is my adopted son.',
   },
   {
+    id:'4c',
     username:'Tinku Mishra',
     content:'This is my first post. Parth is my original Father.',
   },
   {
+    id:'5d',
     username:'Manas Srivastava',
     content:'This is my first post. I am a very chaotic person.',
   },
@@ -53,6 +58,14 @@ app.post('/posts',(req,res)=>{
   console.log(req.body);
   res.redirect('/posts');
 })
+
+app.get('/posts/:id',(req,res)=>{
+  let {id} = req.params;
+  let post= posts.find((p)=> id===p.id);
+  console.log(post);
+  res.render('full.ejs',{post})
+})
+
 
 
 
