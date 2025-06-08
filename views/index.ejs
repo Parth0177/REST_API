@@ -8,6 +8,7 @@
 </head>
 <body>
   <h1>Quora Posts</h1>
+  <a href="http://localhost:3002/posts/new"><button>Create new Post</button></a>
   <hr>
   <% for(post of posts) {%>
     <div class="post">
@@ -15,6 +16,7 @@
       <p class="content"> <%= post.content %> </p>
     </div>
   <%}%>
+
 
 </body>
 </html>

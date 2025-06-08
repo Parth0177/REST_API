@@ -35,6 +35,9 @@ let posts=[
   },
 ];
 
+app.get('/',(req,res)=>{
+  res.render('home.ejs');
+})
 
 app.get('/posts',(req,res)=>{
   res.render('index.ejs',{posts});
@@ -49,7 +52,6 @@ app.post('/posts',(req,res)=>{
   posts.push({username,content});
   console.log(req.body);
   res.redirect('/posts');
-  
 })
 
 
