@@ -8,15 +8,15 @@
 </head>
 <body>
   <h1>Quora Posts</h1>
-  <a href="/posts/new"><button>Create new Post</button></a>
+  <a href="/posts/new"><button class="button">Create new Post</button></a>
   <hr>
 
   <% posts.forEach(post => { %>
     <div class="post">
       <h3 class="user">@<%= post.username %> </h3>
       <p class="content"><%= post.content %></p>
-      <a href="/posts/<%= post.id %>"><button>Click here to get detail of it</button></a>
-      <a href="/posts/<%= post.id %>/edit"><button>Click here to edit</button></a>
+      <a href="/posts/<%= post.id %>"><button class="button">Click here to get detail of it</button></a>
+      <a href="/posts/<%= post.id %>/edit"><button class="button">Click here to edit</button></a>
     </div>
   <% }); %>
 </body>

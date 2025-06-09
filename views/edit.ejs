@@ -4,14 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Content</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <h1>Edit your post</h1>
   <h3>Post id: <%= post.id %></h3>
   <h3>Post Username: <%= post.username %></h3>
   <form action="">
-    <textarea name="" id=""><%= post.content %></textarea>
+    <textarea name="" id="" rows="10" cols="35"><%= post.content %></textarea>
+    <br>
     <button class="button">Submit</button>
+    <br><br><br>
+    <a href="http://localhost:3002/posts"><button class="button">Back to all posts</button></a>
+    
   </form>
 </body>
 </html>

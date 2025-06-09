@@ -72,12 +72,10 @@ app.get('/posts/:id',(req,res)=>{
 app.patch('/posts/:id', (req,res)=>{
   let {id} = req.params;
   let newcontent = req.body.content;
-  console.log(newcontent);
-  let post = posts.find((p)=> id===p.id);
+  let post = posts.find((p)=> id === p.id);
   post.content= newcontent;
-  console.log(id);
-  res.send('patch requst working ')
   console.log(post);
+  res.send('patch requst working ')
   
 })
 
