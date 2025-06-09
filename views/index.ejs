@@ -15,8 +15,13 @@
     <div class="post">
       <h3 class="user">@<%= post.username %> </h3>
       <p class="content"><%= post.content %></p>
+      <div class="buttons">
       <a href="/posts/<%= post.id %>"><button class="button">Click here to get detail of it</button></a>
       <a href="/posts/<%= post.id %>/edit"><button class="button">Click here to edit</button></a>
+      <form action="/posts/<%= post.id %>?_method=DELETE" method="post">
+      <button class="button">Delete</button></a>
+      </form>
+      </div>
     </div>
   <% }); %>
 </body>
