@@ -4,10 +4,12 @@ const app= express();
 const PORT= 3002;
 const path = require('path');
 const {v4: uuidv4}= require('uuid');
+const methodOverride = require('method-override')
 
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+app.use(methodOverride('_method'))
 
 
 app.set('view engine','ejs');
@@ -71,12 +73,11 @@ app.get('/posts/:id',(req,res)=>{
 
 app.patch('/posts/:id', (req,res)=>{
   let {id} = req.params;
-  let newcontent = req.body.content;
-  let post = posts.find((p)=> id === p.id);
-  post.content= newcontent;
+  let newContent = req.body.content;
+  let post = posts.find((p)=> id=== p.id);
+  post.content= newContent;
   console.log(post);
-  res.send('patch requst working ')
-  
+  res.redirect('/posts')
 })
 
 

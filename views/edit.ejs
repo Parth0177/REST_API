@@ -10,8 +10,8 @@
   <h1>Edit your post</h1>
   <h3>Post id: <%= post.id %></h3>
   <h3>Post Username: <%= post.username %></h3>
-  <form action="">
-    <textarea name="" id="" rows="10" cols="35"><%= post.content %></textarea>
+  <form action="/posts/<%= post.id %>?_method=PATCH" method="post">
+    <textarea id="" rows="10" cols="35" name="content"><%= post.content %></textarea>
     <br>
     <button class="button">Submit</button>
     <br><br><br>
